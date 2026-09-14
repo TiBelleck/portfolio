@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Tiago - Dev & Automação de IA</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        header { text-align: center; padding: 4rem 0 2rem; }
+        h1 { font-size: 2.5rem; color: #00ff88; margin-bottom: 0.5rem; }
+        .subtitle { color: #888; font-size: 1.1rem; margin-bottom: 2rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .card { background: #1a1a1a; padding: 1.5rem; border-radius: 12px; border: 1px solid #222; transition: transform 0.3s, border-color 0.3s; }
+        .card:hover { transform: translateY(-4px); border-color: #00ff88; }
+        .card h3 { color: #00ff88; margin-bottom: 0.5rem; font-size: 1.2rem; }
+        .card p { color: #aaa; font-size: 0.95rem; }
+        .tech { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 1rem; }
+        .tech span { background: #2a2a2a; color: #00ff88; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; }
+        .stats { display: flex; gap: 2rem; justify-content: center; margin: 3rem 0; }
+        .stat { text-align: center; }
+        .stat .num { font-size: 2rem; color: #00ff88; font-weight: bold; }
+        .stat .label { color: #666; font-size: 0.85rem; }
+        footer { text-align: center; padding: 3rem 0; color: #555; border-top: 1px solid #222; margin-top: 3rem; }
+        a { color: #00ff88; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Meu Portfólio</h1>
+            <p class="subtitle">Projetos de IA, Automação e Desenvolvimento</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="num">3</div>
+                <div class="label">Repositórios</div>
+            </div>
+            <div class="stat">
+                <div class="num">2</div>
+                <div class="label">Projetos IA</div>
+            </div>
+            <div class="stat">
+                <div class="num">1</div>
+                <div class="label">Blog</div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>JARVIS</h3>
+                <p>Agente pessoal autônomo com MCP, memória persistente e automação completa do computador.</p>
+                <div class="tech">
+                    <span>AI Agents</span>
+                    <span>MCP</span>
+                    <span>Automation</span>
+                    <span>Python</span>
+                </div>
+                <p><a href="https://github.com/TiBelleck/jarvis-workspace">Ver no GitHub &rarr;</a></p>
+            </div>
+
+            <div class="card">
+                <h3>NEXUS</h3>
+                <p>Agente de IA com automação de voz, transcrição de áudio e skills reutilizáveis.</p>
+                <div class="tech">
+                    <span>Python</span>
+                    <span>ElevenLabs</span>
+                    <span>FFmpeg</span>
+                    <span>OpenClaw</span>
+                </div>
+                <p><a href="https://github.com/TiBelleck/Meu-primeiro-projeto-NEXUS">Ver no GitHub &rarr;</a></p>
+            </div>
+
+            <div class="card">
+                <h3>Blog Pessoal</h3>
+                <p>Artigos sobre desenvolvimento, IA e automação.</p>
+                <div class="tech">
+                    <span>GitHub Pages</span>
+                    <span>HTML/CSS</span>
+                </div>
+                <p><a href="https://tibelleck.github.io">Visitar Blog &rarr;</a></p>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Tiago | <a href="https://github.com/TiBelleck">GitHub</a></p>
+        </footer>
+    </div>
+</body>
+</html>
