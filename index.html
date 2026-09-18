@@ -3,158 +3,253 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TiBelleck | Tecnologia e IA — Portfólio</title>
-<meta name="description" content="Portfólio de TiBelleck: automação de processos, agentes de IA e integrações (n8n, MCP, WhatsApp). Autodidata, background em hardware e suporte técnico.">
-<meta property="og:title" content="TiBelleck | Tecnologia e IA — Portfólio">
-<meta property="og:description" content="Projetos de automação, agentes de IA e integrações. Autodidata, background em hardware e suporte técnico.">
+<title>TiBelleck — Automação e Agentes de IA</title>
+<meta name="description" content="Portfólio de TiBelleck: automação de processos, agentes de IA e integrações (WhatsApp Cloud API, n8n, MCP). Autodidata, background em hardware e suporte técnico.">
+<meta property="og:title" content="TiBelleck — Automação e Agentes de IA">
+<meta property="og:description" content="Automação de processos, agentes de IA e integrações. Projetos com validação determinística e teste automatizado.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0c0e'/%3E%3Ctext x='16' y='22' font-family='Inter,Arial,sans-serif' font-size='17' font-weight='700' fill='%2334d399' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+<script>document.documentElement.className += ' js';</script>
 <style>
   :root {
-    --bg: #0a0a0a;
-    --bg-elev: #141414;
-    --bg-card: #161616;
-    --border: #262626;
-    --border-hover: #00ff88;
-    --text: #e8e8e8;
-    --text-dim: #9a9a9a;
-    --text-faint: #656565;
-    --accent: #00ff88;
-    --accent-dim: #00cc6d;
-    --max: 1040px;
+    --bg: #0b0c0e;
+    --bg-soft: #101215;
+    --card: #121417;
+    --card-hover: #15181c;
+    --line: #22262b;
+    --line-soft: #1a1d21;
+    --fg: #e7e9ec;
+    --fg-mid: #a2a8b0;
+    --fg-dim: #6e757e;
+    --accent: #34d399;
+    --accent-soft: rgba(52, 211, 153, 0.12);
+    --accent-line: rgba(52, 211, 153, 0.28);
+    --amber: #e0a960;
+    --wide: 1080px;
+    --text-col: 680px;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Consolas, monospace;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.65;
-    font-size: 16px;
-  }
-  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  img { max-width: 100%; display: block; }
-  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
-  section { padding: 5rem 0; }
 
-  /* nav */
-  header.nav {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(10,10,10,0.85);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--border);
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--fg);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.006em;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--accent-soft); color: var(--fg); }
+
+  .wrap { max-width: var(--wide); margin: 0 auto; padding: 0 1.75rem; }
+  section { padding: 4.5rem 0; }
+  .divider { height: 1px; background: var(--line-soft); max-width: var(--wide); margin: 0 auto; }
+
+  /* ---------- nav ---------- */
+  .nav {
+    position: sticky; top: 0; z-index: 60;
+    background: rgba(11, 12, 14, 0.82);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--line-soft);
   }
   .nav-inner {
-    max-width: var(--max); margin: 0 auto; padding: 0 1.5rem;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 64px;
+    max-width: var(--wide); margin: 0 auto; padding: 0 1.75rem;
+    height: 58px; display: flex; align-items: center; justify-content: space-between;
   }
-  .brand { font-weight: 700; font-size: 1.05rem; color: var(--text); letter-spacing: -0.02em; }
-  .brand span { color: var(--accent); }
-  .brand:hover { text-decoration: none; }
-  nav.links { display: flex; gap: 2rem; }
-  nav.links a { color: var(--text-dim); font-size: 0.9rem; font-weight: 500; }
-  nav.links a:hover { color: var(--accent); text-decoration: none; }
-  .nav-cta {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    border: 1px solid var(--border); border-radius: 8px;
-    padding: 0.4rem 0.9rem; font-size: 0.85rem; color: var(--text) !important;
+  .brand { font-weight: 600; font-size: 0.95rem; letter-spacing: -0.02em; }
+  .brand i { color: var(--accent); font-style: normal; }
+  .nav-links { display: flex; gap: 1.75rem; }
+  .nav-links a {
+    font-size: 0.855rem; color: var(--fg-mid); font-weight: 450;
+    transition: color 0.18s ease;
   }
-  .nav-cta:hover { border-color: var(--accent); text-decoration: none; }
-  .menu-btn { display: none; background: none; border: none; color: var(--text); font-size: 1.4rem; cursor: pointer; }
+  .nav-links a:hover { color: var(--fg); }
+  .nav-mail {
+    font-size: 0.82rem; color: var(--fg-mid);
+    border: 1px solid var(--line); border-radius: 7px;
+    padding: 0.36rem 0.8rem; transition: all 0.18s ease;
+  }
+  .nav-mail:hover { border-color: var(--accent-line); color: var(--accent); }
+  .burger { display: none; background: none; border: 0; color: var(--fg-mid); font-size: 1.15rem; cursor: pointer; padding: 0.3rem; }
 
-  /* hero */
-  .hero { padding: 5.5rem 0 4rem; }
-  .badge {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    border: 1px solid #1e4d33; background: rgba(0,255,136,0.06);
-    color: var(--accent); font-size: 0.8rem; font-weight: 500;
-    padding: 0.35rem 0.8rem; border-radius: 999px; margin-bottom: 1.5rem;
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative; overflow: hidden;
+    padding: 4.75rem 0 4rem;
   }
-  .badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
-  .hero-name { font-size: 1.05rem; font-weight: 600; color: var(--text); letter-spacing: 0.01em; margin-bottom: 0.7rem; }
-  .hero-name span { color: var(--text-faint); font-weight: 400; }
-  .hero h1 { font-size: clamp(2.1rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem; }
-  .hero h1 .accent { color: var(--accent); }
-  .hero .lede { font-size: 1.15rem; color: var(--text-dim); max-width: 620px; margin-bottom: 2rem; }
-  .hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+  .hero::before {
+    content: ''; position: absolute; inset: -40% 30% auto -10%;
+    height: 480px; pointer-events: none;
+    background: radial-gradient(ellipse at center, rgba(52,211,153,0.055), transparent 62%);
+  }
+  .hero-inner { position: relative; max-width: 760px; }
+  .status-chip {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    font-size: 0.755rem; font-weight: 500; letter-spacing: 0.01em;
+    color: var(--accent); background: var(--accent-soft);
+    border: 1px solid var(--accent-line); border-radius: 100px;
+    padding: 0.3rem 0.7rem 0.3rem 0.6rem; margin-bottom: 1.4rem;
+  }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px rgba(52,211,153,0.16); }
+  .kicker { font-size: 0.83rem; color: var(--fg-dim); font-family: var(--mono); margin-bottom: 0.85rem; letter-spacing: 0; }
+  h1 {
+    font-size: clamp(1.75rem, 3.1vw, 2.32rem);
+    line-height: 1.18; font-weight: 700; letter-spacing: -0.03em;
+    margin-bottom: 1.05rem; text-wrap: balance; max-width: 19ch;
+  }
+  h1 em { font-style: normal; color: var(--accent); }
+  .lede { font-size: 0.985rem; color: var(--fg-mid); line-height: 1.68; margin-bottom: 1.9rem; max-width: 62ch; }
+  .cta-row { display: flex; gap: 0.65rem; flex-wrap: wrap; }
   .btn {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.75rem 1.4rem; border-radius: 8px; font-weight: 600; font-size: 0.92rem;
-    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.87rem; font-weight: 550; border-radius: 8px;
+    padding: 0.62rem 1.15rem; transition: all 0.18s ease; border: 1px solid transparent;
   }
-  .btn-primary { background: var(--accent); color: #04140c !important; }
-  .btn-primary:hover { text-decoration: none; transform: translateY(-2px); background: #1fffa0; }
-  .btn-ghost { border: 1px solid var(--border); color: var(--text) !important; }
-  .btn-ghost:hover { text-decoration: none; border-color: var(--accent); color: var(--accent) !important; }
+  .btn-solid { background: var(--accent); color: #06231a; }
+  .btn-solid:hover { background: #4ade9f; transform: translateY(-1px); }
+  .btn-line { border-color: var(--line); color: var(--fg-mid); }
+  .btn-line:hover { border-color: var(--fg-dim); color: var(--fg); }
 
-  /* section headings */
-  .eyebrow { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
-  h2.title { font-size: 1.9rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 2.2rem; }
-
-  /* about */
-  .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: start; }
-  .about p { color: var(--text-dim); margin-bottom: 1.1rem; }
-  .about strong { color: var(--text); }
-  .timeline { border-left: 2px solid var(--border); padding-left: 1.2rem; display: flex; flex-direction: column; gap: 1.4rem; }
-  .timeline .step { position: relative; }
-  .timeline .step::before {
-    content: ''; position: absolute; left: -1.53rem; top: 0.35rem;
-    width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent);
+  /* ---------- section head ---------- */
+  .eyebrow {
+    font-family: var(--mono); font-size: 0.755rem; color: var(--accent);
+    letter-spacing: 0.02em; margin-bottom: 0.5rem;
   }
-  .timeline .step .when { font-size: 0.78rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.06em; }
-  .timeline .step .what { font-weight: 600; color: var(--text); margin-top: 0.15rem; }
-  .timeline .step .detail { font-size: 0.88rem; color: var(--text-dim); margin-top: 0.2rem; }
+  h2 { font-size: 1.42rem; font-weight: 650; letter-spacing: -0.024em; margin-bottom: 0.5rem; }
+  .sec-sub { font-size: 0.925rem; color: var(--fg-dim); margin-bottom: 2.4rem; max-width: 52ch; }
 
-  /* skills */
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.4rem; }
-  .skill-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.3rem; }
-  .skill-card h3 { font-size: 0.95rem; color: var(--accent); margin-bottom: 0.9rem; }
-  .pill-row { display: flex; flex-wrap: wrap; gap: 0.45rem; }
-  .pill { background: #1f1f1f; color: #cfcfcf; font-size: 0.78rem; padding: 0.3rem 0.6rem; border-radius: 6px; }
+  /* ---------- about ---------- */
+  .about-grid { display: grid; grid-template-columns: 1fr 340px; gap: 3.5rem; align-items: start; }
+  .about p { color: var(--fg-mid); margin-bottom: 1rem; max-width: 60ch; }
+  .about p:last-child { margin-bottom: 0; }
+  .about strong { color: var(--fg); font-weight: 600; }
 
-  /* projects */
-  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.6rem; }
-  .card {
-    background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
-    padding: 1.7rem; display: flex; flex-direction: column; transition: transform 0.25s ease, border-color 0.25s ease;
+  .track { display: flex; flex-direction: column; }
+  .track-item { position: relative; padding: 0 0 1.5rem 1.4rem; border-left: 1px solid var(--line); }
+  .track-item:last-child { padding-bottom: 0; border-left-color: transparent; }
+  .track-item::before {
+    content: ''; position: absolute; left: -3.5px; top: 5px;
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--bg); border: 1.5px solid var(--line);
   }
-  .card:hover { transform: translateY(-4px); border-color: var(--border-hover); }
-  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.8rem; margin-bottom: 0.7rem; }
-  .card h3 { font-size: 1.15rem; color: var(--text); }
-  .status { font-size: 0.7rem; padding: 0.22rem 0.55rem; border-radius: 999px; white-space: nowrap; font-weight: 600; }
-  .status.live { background: rgba(0,255,136,0.1); color: var(--accent); border: 1px solid #1e4d33; }
-  .status.wip { background: rgba(255,180,0,0.1); color: #ffb400; border: 1px solid #4d3b1e; }
-  .status.private { background: rgba(150,150,150,0.1); color: #aaa; border: 1px solid #333; }
-  .card p.desc { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 1rem; flex-grow: 1; }
-  .card .highlight { font-size: 0.85rem; color: #c9c9c9; background: #1c1c1c; border-left: 2px solid var(--accent); padding: 0.6rem 0.8rem; border-radius: 0 6px 6px 0; margin-bottom: 1rem; }
-  .card .tech { margin-bottom: 1rem; }
-  .card .link { font-size: 0.88rem; font-weight: 600; }
-  .card .link.disabled { color: var(--text-faint); cursor: default; }
+  .track-item.now::before { border-color: var(--accent); background: var(--accent); box-shadow: 0 0 0 3px rgba(52,211,153,0.14); }
+  .track-when { font-family: var(--mono); font-size: 0.72rem; color: var(--fg-dim); letter-spacing: 0.02em; }
+  .track-what { font-size: 0.925rem; font-weight: 550; margin-top: 0.1rem; }
+  .track-detail { font-size: 0.855rem; color: var(--fg-dim); margin-top: 0.15rem; line-height: 1.55; }
 
-  /* contact */
-  .contact-box {
-    background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
-    padding: 3rem 2rem; text-align: center;
+  /* ---------- skills ---------- */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(212px, 1fr)); gap: 1rem; }
+  .skill {
+    background: var(--card); border: 1px solid var(--line-soft);
+    border-radius: 11px; padding: 1.1rem 1.15rem;
   }
-  .contact-box h2 { font-size: 1.7rem; margin-bottom: 0.6rem; }
-  .contact-box p { color: var(--text-dim); margin-bottom: 1.8rem; }
-  .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .skill h3 {
+    font-size: 0.775rem; font-weight: 600; color: var(--fg-dim);
+    text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.8rem;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.38rem; }
+  .tag {
+    font-size: 0.775rem; color: var(--fg-mid); background: var(--bg-soft);
+    border: 1px solid var(--line-soft); border-radius: 6px; padding: 0.24rem 0.55rem;
+  }
 
-  footer { border-top: 1px solid var(--border); padding: 2.2rem 0; text-align: center; color: var(--text-faint); font-size: 0.85rem; }
-  footer a { color: var(--text-faint); }
-  footer a:hover { color: var(--accent); }
+  /* ---------- projects ---------- */
+  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(322px, 1fr)); gap: 1.1rem; }
+  .proj {
+    background: var(--card); border: 1px solid var(--line-soft); border-radius: 13px;
+    padding: 1.45rem; display: flex; flex-direction: column;
+    transition: border-color 0.22s ease, background 0.22s ease, transform 0.22s ease;
+  }
+  .proj:hover { border-color: var(--line); background: var(--card-hover); transform: translateY(-2px); }
+  .proj-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.8rem; margin-bottom: 0.6rem; }
+  .proj h3 { font-size: 1.005rem; font-weight: 600; letter-spacing: -0.018em; line-height: 1.3; }
+  .chip {
+    flex-shrink: 0; font-size: 0.68rem; font-weight: 550; letter-spacing: 0.01em;
+    border-radius: 100px; padding: 0.2rem 0.55rem; white-space: nowrap;
+  }
+  .chip.open { color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-line); }
+  .chip.closed { color: var(--fg-dim); background: rgba(255,255,255,0.03); border: 1px solid var(--line); }
+  .chip.build { color: var(--amber); background: rgba(224,169,96,0.1); border: 1px solid rgba(224,169,96,0.24); }
+  .proj-desc { font-size: 0.885rem; color: var(--fg-mid); line-height: 1.62; margin-bottom: 0.9rem; }
+  .proj-note {
+    font-size: 0.815rem; color: var(--fg-dim); line-height: 1.6;
+    background: var(--bg-soft); border-left: 2px solid var(--accent-line);
+    border-radius: 0 7px 7px 0; padding: 0.7rem 0.85rem; margin-bottom: 1rem;
+  }
+  .proj-note b { color: var(--fg-mid); font-weight: 550; }
+  .proj-foot {
+    margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line-soft);
+    display: flex; align-items: center; justify-content: space-between; gap: 0.8rem;
+  }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 0.32rem; }
+  .proj-tags .tag { font-size: 0.735rem; padding: 0.18rem 0.45rem; }
+  .proj-link { font-size: 0.83rem; font-weight: 550; color: var(--accent); white-space: nowrap; transition: opacity 0.18s ease; }
+  .proj-link:hover { opacity: 0.78; }
+  .proj-link.off { color: var(--fg-dim); font-weight: 450; cursor: default; }
 
-  @media (max-width: 760px) {
-    nav.links, .nav-cta { display: none; }
-    .menu-btn { display: block; }
-    nav.links.open { display: flex; position: absolute; top: 64px; left: 0; right: 0; background: var(--bg-elev); flex-direction: column; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); gap: 1rem; }
-    .about-grid { grid-template-columns: 1fr; }
-    section { padding: 3.2rem 0; }
+  /* ---------- contact ---------- */
+  .contact {
+    background: var(--card); border: 1px solid var(--line-soft); border-radius: 15px;
+    padding: 2.6rem 2rem; text-align: center; position: relative; overflow: hidden;
+  }
+  .contact::before {
+    content: ''; position: absolute; inset: -60% 20% auto 20%; height: 260px; pointer-events: none;
+    background: radial-gradient(ellipse at center, rgba(52,211,153,0.07), transparent 65%);
+  }
+  .contact > * { position: relative; }
+  .contact h2 { margin-bottom: 0.4rem; }
+  .contact p { font-size: 0.93rem; color: var(--fg-dim); margin-bottom: 1.5rem; }
+  .contact .cta-row { justify-content: center; }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 1.8rem 0; }
+  .foot-inner {
+    max-width: var(--wide); margin: 0 auto; padding: 0 1.75rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    font-size: 0.815rem; color: var(--fg-dim);
+  }
+  .foot-inner a { transition: color 0.18s ease; }
+  .foot-inner a:hover { color: var(--accent); }
+
+  /* ---------- motion ----------
+     Só esconde quando o JS confirmou que está ativo. Sem isso, um erro de
+     script deixaria metade do portfólio invisível — conteúdo não pode
+     depender de animação para existir. */
+  .js .rise { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .js .rise.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .js .rise { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2.25rem; }
+  }
+  @media (max-width: 680px) {
+    section { padding: 3.25rem 0; }
+    .hero { padding: 3.25rem 0 2.75rem; }
+    .nav-links { display: none; }
+    .nav-links.show {
+      display: flex; position: absolute; top: 58px; left: 0; right: 0;
+      flex-direction: column; gap: 0; background: var(--bg-soft);
+      border-bottom: 1px solid var(--line); padding: 0.4rem 1.75rem 0.9rem;
+    }
+    .nav-links.show a { padding: 0.55rem 0; }
+    .nav-mail { display: none; }
+    .burger { display: block; }
+    .proj-foot { flex-direction: column; align-items: flex-start; gap: 0.7rem; }
+    .foot-inner { flex-direction: column; text-align: center; gap: 0.5rem; }
   }
 </style>
 </head>
@@ -162,220 +257,251 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="#top" class="brand">TiBelleck<span>.</span></a>
-    <nav class="links" id="navLinks">
+    <a href="#top" class="brand">TiBelleck<i>.</i></a>
+    <nav class="nav-links" id="links">
       <a href="#sobre">Sobre</a>
-      <a href="#skills">Skills</a>
+      <a href="#stack">Stack</a>
       <a href="#projetos">Projetos</a>
       <a href="#contato">Contato</a>
     </nav>
-    <a href="#contato" class="nav-cta">Contato →</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+    <a href="mailto:tirodrigues@gmail.com" class="nav-mail">Falar comigo</a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
   </div>
 </header>
 
 <main id="top">
-  <section class="hero wrap">
-    <div class="badge">Aberto a oportunidades em TI</div>
-    <p class="hero-name">TiBelleck <span>| Tecnologia e IA</span></p>
-    <h1><span class="accent">Automação</span> e <span class="accent">agentes de IA</span> que resolvem problema de verdade.</h1>
-    <p class="lede">Autodidata, com background prático em hardware e suporte técnico. Hoje aplico essa mesma lógica — resolver o problema de verdade, sem enrolação — construindo automações que tiram gente do meio de tarefas repetitivas.</p>
-    <div class="hero-actions">
-      <a href="#projetos" class="btn btn-primary">Ver projetos</a>
-      <a href="https://github.com/TiBelleck" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
-      <a href="mailto:tirodrigues@gmail.com" class="btn btn-ghost">Contato</a>
-    </div>
-  </section>
 
-  <section id="sobre" class="wrap">
-    <div class="eyebrow">Sobre</div>
-    <h2 class="title">Da bancada de hardware para automação e IA</h2>
-    <div class="about-grid">
-      <div class="about">
-        <p><strong>Autodidata.</strong> Antes de migrar para desenvolvimento e automação, tive uma loja de informática — venda e manutenção de hardware e impressoras. Foi ali que aprendi a resolver problema técnico direto com quem usa: sem manual, sem suporte de terceiros, no improviso que funciona.</p>
-        <p>Hoje trago essa mesma lógica prática para automação e agentes de IA: sistemas que integram WhatsApp, n8n, MCP e LLMs para eliminar tarefa repetitiva — com cuidado deliberado para o modelo de IA não decidir o que não deveria decidir, e não alucinar em cima de informação sensível.</p>
-        <p>Busco minha próxima posição em <strong>automação de processos e agentes de IA</strong>, onde experiência prática e disposição para aprender rápido pesam mais que caminho tradicional.</p>
-      </div>
-      <div class="timeline">
-        <div class="step">
-          <div class="when">Base</div>
-          <div class="what">Loja de informática</div>
-          <div class="detail">Hardware, manutenção e reparo de impressoras, suporte técnico direto ao cliente.</div>
-        </div>
-        <div class="step">
-          <div class="when">Transição</div>
-          <div class="what">Autodidata em programação</div>
-          <div class="detail">Python, JavaScript/TypeScript, automação de processos.</div>
-        </div>
-        <div class="step">
-          <div class="when">Atual</div>
-          <div class="what">Automação & Agentes de IA</div>
-          <div class="detail">n8n, MCP, integrações com WhatsApp, projetos pessoais e de estudo em produção.</div>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <span class="status-chip"><span class="dot"></span>Aberto a oportunidades</span>
+        <p class="kicker">Automação de processos · Agentes de IA</p>
+        <h1>Automação de IA que <em>você pode conferir</em>.</h1>
+        <p class="lede">Construo sistemas que tiram pessoas de tarefa repetitiva — atendimento por WhatsApp, leitura de documento fiscal, integração entre sistemas. Com o cuidado que costuma faltar: o modelo lê e redige, mas quem valida número, documento e regra de negócio é código determinístico e testado.</p>
+        <div class="cta-row">
+          <a href="#projetos" class="btn btn-solid">Ver projetos</a>
+          <a href="https://github.com/TiBelleck" target="_blank" rel="noopener" class="btn btn-line">GitHub ↗</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="skills" class="wrap">
-    <div class="eyebrow">Stack</div>
-    <h2 class="title">Ferramentas e tecnologias</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Automação & Agentes de IA</h3>
-        <div class="pill-row">
-          <span class="pill">n8n</span>
-          <span class="pill">MCP</span>
-          <span class="pill">Webhooks</span>
-          <span class="pill">WhatsApp / Evolution API</span>
-          <span class="pill">Orquestração de LLM</span>
+  <div class="divider"></div>
+
+  <section id="sobre">
+    <div class="wrap rise">
+      <p class="eyebrow">// sobre</p>
+      <h2>Da bancada de hardware para automação e IA</h2>
+      <p class="sec-sub">Caminho pouco comum — e é exatamente de onde vem a parte prática.</p>
+      <div class="about-grid">
+        <div class="about">
+          <p><strong>Autodidata.</strong> Antes de migrar para desenvolvimento, tive uma loja de informática: venda e manutenção de hardware, redes, reparo de impressoras. Ali se aprende a resolver problema técnico direto com quem está usando — sem manual, sem suporte de terceiro para escalar, no que funciona de verdade.</p>
+          <p>Hoje aplico a mesma lógica em automação e agentes de IA. A diferença que faço questão de manter: <strong>modelo de linguagem não decide o que não deveria decidir.</strong> Ele lê, resume e redige. Quem confere dígito verificador, soma de item e regra de negócio é código que eu escrevo e testo.</p>
+          <p>Trabalho com Python, n8n, MCP e integrações — WhatsApp Cloud API, OpenAI, Anthropic, Mistral. Documento decisão técnica junto com a entrega, para o cliente entender o que está rodando em vez de receber uma caixa-preta.</p>
         </div>
-      </div>
-      <div class="skill-card">
-        <h3>Linguagens</h3>
-        <div class="pill-row">
-          <span class="pill">Python</span>
-          <span class="pill">JavaScript</span>
-          <span class="pill">TypeScript</span>
-          <span class="pill">SQL</span>
-          <span class="pill">PowerShell / Bash</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3>Ferramentas</h3>
-        <div class="pill-row">
-          <span class="pill">Git / GitHub</span>
-          <span class="pill">Docker</span>
-          <span class="pill">SQLite</span>
-          <span class="pill">FFmpeg</span>
-          <span class="pill">VS Code</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3>Base técnica (hardware)</h3>
-        <div class="pill-row">
-          <span class="pill">Montagem de PC</span>
-          <span class="pill">Manutenção de hardware</span>
-          <span class="pill">Reparo de impressoras</span>
-          <span class="pill">Suporte técnico</span>
+        <div class="track">
+          <div class="track-item">
+            <p class="track-when">BASE</p>
+            <p class="track-what">Loja de informática</p>
+            <p class="track-detail">Hardware, redes, reparo de impressoras e suporte direto ao cliente final.</p>
+          </div>
+          <div class="track-item">
+            <p class="track-when">TRANSIÇÃO</p>
+            <p class="track-what">Autodidata em programação</p>
+            <p class="track-detail">Python, JavaScript/TypeScript, automação de processos — cursos, prática e projeto próprio.</p>
+          </div>
+          <div class="track-item now">
+            <p class="track-when">AGORA</p>
+            <p class="track-what">Automação &amp; agentes de IA</p>
+            <p class="track-detail">WhatsApp Cloud API, n8n, MCP e validação determinística em cima de saída de LLM.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="projetos" class="wrap">
-    <div class="eyebrow">Projetos</div>
-    <h2 class="title">O que eu construí</h2>
-    <div class="projects-grid">
+  <div class="divider"></div>
 
-      <div class="card">
-        <div class="card-top">
-          <h3>Extrator de Documentos Fiscais</h3>
-          <span class="status live">público</span>
+  <section id="stack">
+    <div class="wrap rise">
+      <p class="eyebrow">// stack</p>
+      <h2>Ferramentas do dia a dia</h2>
+      <p class="sec-sub">O que uso de fato em projeto, não lista de currículo.</p>
+      <div class="skills">
+        <div class="skill">
+          <h3>Automação &amp; IA</h3>
+          <div class="tags">
+            <span class="tag">n8n</span>
+            <span class="tag">MCP</span>
+            <span class="tag">WhatsApp Cloud API</span>
+            <span class="tag">Webhooks</span>
+            <span class="tag">OCR</span>
+            <span class="tag">RPA</span>
+          </div>
         </div>
-        <p class="desc">Lê nota fiscal, boleto ou orçamento (foto ou PDF) e extrai os dados com OCR + LLM. Quem decide se o resultado pode ir para a planilha não é o modelo — é código que recalcula o que dá para recalcular.</p>
-        <div class="highlight">Validação determinística antes de qualquer gravação: dígito verificador de CNPJ (inclusive o formato alfanumérico em vigor desde 31/07/2026) e CPF, dígito verificador da chave de NF-e, CNPJ do emitente conferido contra o embutido na chave, e soma dos itens contra o total declarado. 27 testes automatizados, pipeline validado contra a API real — que já pegou um bug de data e um rate limit de provedor antes de virar produto.</div>
-        <div class="tech pill-row">
-          <span class="pill">OCR</span>
-          <span class="pill">LLM</span>
-          <span class="pill">n8n</span>
-          <span class="pill">Node.js</span>
+        <div class="skill">
+          <h3>Linguagens</h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Bash</span>
+            <span class="tag">PowerShell</span>
+          </div>
         </div>
-        <a class="link" href="https://github.com/TiBelleck/ai-document-extractor" target="_blank" rel="noopener">Ver no GitHub →</a>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <h3>Motor de Atendimento WhatsApp + IA</h3>
-          <span class="status private">privado</span>
+        <div class="skill">
+          <h3>Backend &amp; dados</h3>
+          <div class="tags">
+            <span class="tag">FastAPI</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">SQLAlchemy</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Docker</span>
+          </div>
         </div>
-        <p class="desc">Motor de atendimento e vendas por WhatsApp construído sobre a Cloud API oficial da Meta — não biblioteca não-oficial, que arrisca o número comercial do cliente final com banimento. Multi-cliente desde a base: cada negócio tem seu número, sua personalidade de IA e suas conversas isoladas das demais.</p>
-        <div class="highlight">Contenção de tentativa de manipular o comportamento do bot via mensagem do próprio contato, token de cada cliente fora do banco de dados, e recuperação de evento parado — processo que reinicia no meio do atendimento não deixa mais o contato sem resposta para sempre. 84 testes automatizados cobrindo os cenários que custam dinheiro ou confiança quando falham.</div>
-        <div class="tech pill-row">
-          <span class="pill">Python</span>
-          <span class="pill">FastAPI</span>
-          <span class="pill">WhatsApp Cloud API</span>
-          <span class="pill">SQLAlchemy</span>
+        <div class="skill">
+          <h3>Base técnica</h3>
+          <div class="tags">
+            <span class="tag">Git / GitHub</span>
+            <span class="tag">Testes automatizados</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Hardware &amp; redes</span>
+          </div>
         </div>
-        <span class="link disabled">Repositório privado — código disponível sob demanda</span>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <h3>Acompanhamento de Sinistro</h3>
-          <span class="status live">estudo de caso</span>
-        </div>
-        <p class="desc">Automação de WhatsApp para acompanhamento de sinistro automotivo: avisa segurado, corretor e seguradora sobre o status do reparo <em>antes</em> de perguntarem — reduzindo ligação de quem só quer saber "como tá meu carro".</p>
-        <div class="highlight">Decisão central: nenhum LLM decide o público ou monta a explicação técnica do reparo. O telefone identifica quem pergunta por comparação determinística de string, e o texto sai pronto de uma base de etapas — o modelo só redige. Em contexto de seguro, deixar o modelo inventar detalhe técnico é risco real.</div>
-        <div class="tech pill-row">
-          <span class="pill">n8n</span>
-          <span class="pill">MCP</span>
-          <span class="pill">WhatsApp</span>
-          <span class="pill">Node.js</span>
-        </div>
-        <span class="link disabled">Projeto privado — código não público</span>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <h3>NEXUS</h3>
-          <span class="status live">público</span>
-        </div>
-        <p class="desc">Ambiente de agente pessoal com automação de voz, memória persistente e sistema de skills reutilizáveis, com CI (lint, typecheck, testes) rodando no GitHub Actions.</p>
-        <div class="tech pill-row">
-          <span class="pill">Python</span>
-          <span class="pill">ElevenLabs (TTS)</span>
-          <span class="pill">FFmpeg</span>
-          <span class="pill">GitHub Actions</span>
-        </div>
-        <a class="link" href="https://github.com/TiBelleck/Meu-primeiro-projeto-NEXUS" target="_blank" rel="noopener">Ver no GitHub →</a>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <h3>JARVIS</h3>
-          <span class="status wip">em desenvolvimento</span>
-        </div>
-        <p class="desc">Workspace de orquestração de agente pessoal: memória de projeto, integração MCP com múltiplas ferramentas (filesystem, GitHub, e-mail, calendário) e planejamento estruturado de tarefas complexas.</p>
-        <div class="tech pill-row">
-          <span class="pill">MCP</span>
-          <span class="pill">Node.js</span>
-          <span class="pill">Automação</span>
-        </div>
-        <span class="link disabled">Repositório privado</span>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="contato" class="wrap">
-    <div class="contact-box">
-      <h2>Vamos conversar?</h2>
-      <p>Aberto a oportunidades em automação de processos e agentes de IA.</p>
-      <div class="contact-links">
-        <a href="mailto:tirodrigues@gmail.com" class="btn btn-primary">tirodrigues@gmail.com</a>
-        <a href="https://github.com/TiBelleck" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
       </div>
     </div>
   </section>
+
+  <div class="divider"></div>
+
+  <section id="projetos">
+    <div class="wrap rise">
+      <p class="eyebrow">// projetos</p>
+      <h2>O que eu construí</h2>
+      <p class="sec-sub">Cada um com a decisão técnica que considero mais importante em destaque.</p>
+      <div class="projects">
+
+        <article class="proj">
+          <div class="proj-head">
+            <h3>Extrator de documentos fiscais</h3>
+            <span class="chip open">público</span>
+          </div>
+          <p class="proj-desc">Lê nota fiscal, boleto ou orçamento — foto ou PDF — e extrai os campos com OCR + LLM. Se o dado pode ir para a planilha ou precisa de revisão humana, quem decide não é o modelo.</p>
+          <p class="proj-note"><b>Validação determinística antes de gravar:</b> dígito verificador de CNPJ (inclusive o formato alfanumérico vigente desde 31/07/2026) e CPF, dígito da chave de NF-e, CNPJ do emitente conferido contra o embutido na chave, e soma dos itens contra o total declarado. 27 testes automatizados, pipeline rodado contra API real de dois provedores.</p>
+          <div class="proj-foot">
+            <div class="proj-tags">
+              <span class="tag">Node.js</span><span class="tag">OCR + LLM</span><span class="tag">n8n</span>
+            </div>
+            <a class="proj-link" href="https://github.com/TiBelleck/ai-document-extractor" target="_blank" rel="noopener">Ver código →</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-head">
+            <h3>Motor de atendimento WhatsApp + IA</h3>
+            <span class="chip closed">privado</span>
+          </div>
+          <p class="proj-desc">Atendimento e vendas por WhatsApp sobre a Cloud API oficial da Meta — não biblioteca não-oficial, que coloca o número comercial do cliente em risco de banimento. Multi-cliente desde a base: cada negócio com seu número, sua personalidade de IA e conversas isoladas.</p>
+          <p class="proj-note"><b>84 testes cobrindo o que custa dinheiro ou confiança:</b> contenção de tentativa de manipular o bot pela mensagem do contato, token de cliente fora do banco, e recuperação de evento parado — processo que reinicia no meio do atendimento não deixa mais ninguém sem resposta.</p>
+          <div class="proj-foot">
+            <div class="proj-tags">
+              <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Cloud API</span>
+            </div>
+            <span class="proj-link off">Código sob demanda</span>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-head">
+            <h3>Acompanhamento de sinistro</h3>
+            <span class="chip closed">estudo de caso</span>
+          </div>
+          <p class="proj-desc">Automação de WhatsApp para reparo de veículo em sinistro: avisa segurado, corretor e seguradora sobre o status <em>antes</em> de perguntarem — cortando a ligação de quem só quer saber "como está meu carro".</p>
+          <p class="proj-note"><b>Nenhum LLM decide o público nem escreve detalhe técnico de reparo.</b> O telefone identifica quem perguntou por comparação determinística, e o texto sai pronto de uma base de etapas. Em contexto de seguro, modelo inventando detalhe de funilaria é responsabilidade civil.</p>
+          <div class="proj-foot">
+            <div class="proj-tags">
+              <span class="tag">n8n</span><span class="tag">MCP</span><span class="tag">WhatsApp</span>
+            </div>
+            <span class="proj-link off">Projeto próprio</span>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-head">
+            <h3>NEXUS</h3>
+            <span class="chip open">público</span>
+          </div>
+          <p class="proj-desc">Ambiente de agente pessoal com automação de voz: text-to-speech, gravação e transcrição, skills reutilizáveis e CI com lint, typecheck e testes no GitHub Actions.</p>
+          <div class="proj-foot">
+            <div class="proj-tags">
+              <span class="tag">Python</span><span class="tag">ElevenLabs</span><span class="tag">Whisper</span>
+            </div>
+            <a class="proj-link" href="https://github.com/TiBelleck/Meu-primeiro-projeto-NEXUS" target="_blank" rel="noopener">Ver código →</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-head">
+            <h3>JARVIS</h3>
+            <span class="chip build">em construção</span>
+          </div>
+          <p class="proj-desc">Workspace de orquestração de agente: memória de projeto, integração MCP com filesystem, GitHub, e-mail e calendário, e planejamento estruturado de tarefa complexa.</p>
+          <div class="proj-foot">
+            <div class="proj-tags">
+              <span class="tag">MCP</span><span class="tag">Node.js</span><span class="tag">Automação</span>
+            </div>
+            <span class="proj-link off">Repositório privado</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap rise">
+      <div class="contact">
+        <h2>Vamos conversar?</h2>
+        <p>Aberto a oportunidades e projetos em automação de processos e agentes de IA.</p>
+        <div class="cta-row">
+          <a href="mailto:tirodrigues@gmail.com" class="btn btn-solid">tirodrigues@gmail.com</a>
+          <a href="https://github.com/TiBelleck" target="_blank" rel="noopener" class="btn btn-line">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
-  <div class="wrap">
-    &copy; 2026 TiBelleck · <a href="https://github.com/TiBelleck">github.com/TiBelleck</a>
+  <div class="foot-inner">
+    <span>© 2026 TiBelleck</span>
+    <a href="https://github.com/TiBelleck" target="_blank" rel="noopener">github.com/TiBelleck</a>
   </div>
 </footer>
 
 <script>
-  document.getElementById('menuBtn').addEventListener('click', function () {
-    document.getElementById('navLinks').classList.toggle('open');
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('links');
+  burger.addEventListener('click', function () { links.classList.toggle('show'); });
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { links.classList.remove('show'); });
   });
-  document.querySelectorAll('#navLinks a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      document.getElementById('navLinks').classList.remove('open');
-    });
-  });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.rise').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.rise').forEach(function (el) { el.classList.add('in'); });
+  }
 </script>
 
 </body>
 </html>
-<!-- trigger rebuild 2026-09-18 -->
