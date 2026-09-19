@@ -432,14 +432,15 @@
         <article class="proj">
           <div class="proj-head">
             <h3>NEXUS</h3>
-            <span class="chip open">público</span>
+            <span class="chip closed">privado</span>
           </div>
-          <p class="proj-desc">Ambiente de agente pessoal com automação de voz: text-to-speech, gravação e transcrição, skills reutilizáveis e CI com lint, typecheck e testes no GitHub Actions.</p>
+          <p class="proj-desc">Agente de voz: grava, transcreve e responde com um LLM que pode usar ferramenta — buscar na web, ler o próprio projeto, gravar memória permanente — sem virar um sistema generalista.</p>
+          <p class="proj-note"><b>Permissão mínima por ferramenta:</b> o agente só escreve dentro da própria área de memória, nunca no código-fonte — não tem como se auto-modificar por conversa. Testado contra API real, não simulação: pedi pra "lembrar" algo, conferi lendo o arquivo gerado, e recuperei a mesma memória numa sessão nova, sem histórico.</p>
           <div class="proj-foot">
             <div class="proj-tags">
-              <span class="tag">Python</span><span class="tag">ElevenLabs</span><span class="tag">Whisper</span>
+              <span class="tag">Python</span><span class="tag">Whisper</span><span class="tag">Tool calling</span>
             </div>
-            <a class="proj-link" href="https://github.com/TiBelleck/Meu-primeiro-projeto-NEXUS" target="_blank" rel="noopener">Ver código →</a>
+            <span class="proj-link off">Repositório privado</span>
           </div>
         </article>
 
